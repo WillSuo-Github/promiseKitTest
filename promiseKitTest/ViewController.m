@@ -12,7 +12,8 @@
 #include <sys/sysctl.h>
 #include <net/if.h>
 #include <net/if_dl.h>
-#import "WSPromise.h"
+#import "OneViewController.h"
+
 
 @interface ViewController ()
 
@@ -41,12 +42,12 @@
 //        
 //        NSLog(@"%@---%@", obj, [NSThread currentThread]);
 //    });
-    
-    
-    [self customOne].then(^(id obj){
-        NSLog(@"%@", obj);
-        
-    });
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
+    OneViewController *oneVc = [[OneViewController alloc] init];
+    [self presentViewController:oneVc animated:true completion:nil];
 }
 
 #pragma mark -
@@ -92,23 +93,6 @@
     }];
 }
 
-#pragma mark -
-#pragma mark - customPromise
-- (WSPromise *)customOne{
-    return [WSPromise wsPromiseWithBlock:^(void (^pBlock)(id obj)) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            pBlock(@"123");
-        });
-    }];
-}
 
-
-- (WSPromise *)customTwo{
-    return [WSPromise wsPromiseWithBlock:^(void (^pBlock)(id obj)) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            pBlock(@"222");
-        });
-    }];
-}
 
 @end

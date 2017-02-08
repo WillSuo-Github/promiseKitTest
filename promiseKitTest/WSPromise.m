@@ -24,7 +24,7 @@
     WSPromise *p = [[WSPromise alloc] init];
     __weak typeof(p) weakP = p;
     p.pBlock = ^(id obj){
-        NSLog(@"%@", obj);
+        NSLog(@"%@---%@", obj, p);
         if (weakP.commonBlock) {
             weakP.commonBlock(obj);
         }
@@ -42,6 +42,10 @@
         self.commonBlock = obj;
         return self;
     };
+}
+
+- (void)dealloc{
+    NSLog(@"wspromise dealloc");
 }
 
 @end

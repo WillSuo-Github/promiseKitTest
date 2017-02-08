@@ -14,6 +14,7 @@
 		54D8CF971E44860800E9072B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D8CF951E44860800E9072B /* Main.storyboard */; };
 		54D8CF991E44860800E9072B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54D8CF981E44860800E9072B /* Assets.xcassets */; };
 		54D8CF9C1E44860800E9072B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D8CF9A1E44860800E9072B /* LaunchScreen.storyboard */; };
+		54FBD85E1E4B719300940FA7 /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FBD85D1E4B719300940FA7 /* OneViewController.m */; };
 		C2613E0CD09A8A77AA1A7588 /* Pods_promiseKitTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA308141C7A1CA11D58B492 /* Pods_promiseKitTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,8 @@
 		54D8CF981E44860800E9072B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54D8CF9B1E44860800E9072B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54D8CF9D1E44860800E9072B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54FBD85C1E4B719300940FA7 /* OneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
+		54FBD85D1E4B719300940FA7 /* OneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
 		B24BD24BBAED45EE1A26E314 /* Pods-promiseKitTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-promiseKitTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-promiseKitTest/Pods-promiseKitTest.release.xcconfig"; sourceTree = "<group>"; };
 		F457A09FCD38EA9BABDA3BB9 /* Pods-promiseKitTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-promiseKitTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-promiseKitTest/Pods-promiseKitTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +84,8 @@
 				54D8CF901E44860800E9072B /* AppDelegate.m */,
 				54D8CF921E44860800E9072B /* ViewController.h */,
 				54D8CF931E44860800E9072B /* ViewController.m */,
+				54FBD85C1E4B719300940FA7 /* OneViewController.h */,
+				54FBD85D1E4B719300940FA7 /* OneViewController.m */,
 				544864E91E49669200016FDC /* WSPromise.h */,
 				544864EA1E49669200016FDC /* WSPromise.m */,
 				54D8CF951E44860800E9072B /* Main.storyboard */,
@@ -233,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54D8CF941E44860800E9072B /* ViewController.m in Sources */,
+				54FBD85E1E4B719300940FA7 /* OneViewController.m in Sources */,
 				54D8CF911E44860800E9072B /* AppDelegate.m in Sources */,
 				54D8CF8E1E44860800E9072B /* main.m in Sources */,
 				544864EB1E49669200016FDC /* WSPromise.m in Sources */,
