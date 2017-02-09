@@ -19,14 +19,13 @@
 
 + (instancetype)wsPromiseWithBlock:(void (^)(void(^pBlock)(id obj)))block{
     
-
-    
     WSPromise *p = [[WSPromise alloc] init];
     __weak typeof(p) weakP = p;
     p.pBlock = ^(id obj){
-        NSLog(@"%@---%@", obj, p);
-        if (weakP.commonBlock) {
-            weakP.commonBlock(obj);
+        @autoreleasepool {
+            if (weakP.commonBlock) {
+                weakP.commonBlock(obj);
+            }
         }
         
         
