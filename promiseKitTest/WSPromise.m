@@ -20,15 +20,15 @@
 + (instancetype)wsPromiseWithBlock:(void (^)(void(^pBlock)(id obj)))block{
     
     WSPromise *p = [[WSPromise alloc] init];
-    __weak typeof(p) weakP = p;
+    __block WSPromise *blockp = p;
     p.pBlock = ^(id obj){
         @autoreleasepool {
-            if (weakP.commonBlock) {
-                weakP.commonBlock(obj);
+            if (blockp.commonBlock) {
+                blockp.commonBlock(obj);
             }
+            //主动断掉循环引用
+            blockp = nil;
         }
-        
-        
     };
     block(p.pBlock);
 
