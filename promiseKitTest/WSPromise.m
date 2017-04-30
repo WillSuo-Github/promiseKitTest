@@ -17,18 +17,27 @@
 
 @implementation WSPromise
 
-+ (instancetype)wsPromiseWithBlock:(void (^)(void(^pBlock)(id obj)))block{
+
+- (id)copyWithZone:(NSZone *)zone{
     
     WSPromise *p = [[WSPromise alloc] init];
-    __block WSPromise *blockp = p;
+    p.pBlock = [self.pBlock copy];
+    p.commonBlock = [self.commonBlock copy];
+    p.then = [self.then copy];
+    return p;
+    
+}
+
++ (instancetype)wsPromiseWithBlock:(void (^)(void(^pBlock)(id obj)))block{
+    
+    __block WSPromise *p = [[WSPromise alloc] init];
     p.pBlock = ^(id obj){
-        @autoreleasepool {
-            if (blockp.commonBlock) {
-                blockp.commonBlock(obj);
-            }
-            //主动断掉循环引用
-            blockp = nil;
+  
+        if (p.commonBlock) {
+            p.commonBlock(obj);
         }
+        //主动断掉循环引用
+        p = nil;
     };
     block(p.pBlock);
 

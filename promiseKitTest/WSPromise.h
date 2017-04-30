@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface WSPromise : NSObject
+@interface WSPromise : NSObject<NSCopying>
 
 
 

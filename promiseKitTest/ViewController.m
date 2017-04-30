@@ -48,6 +48,7 @@
     [super touchesBegan:touches withEvent:event];
     OneViewController *oneVc = [[OneViewController alloc] init];
     [self presentViewController:oneVc animated:true completion:nil];
+    
 }
 
 #pragma mark -
